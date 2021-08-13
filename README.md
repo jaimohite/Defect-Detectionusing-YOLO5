@@ -14,7 +14,7 @@ https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-pro
 
 
 3. Create folder train_data
-  then Ceate folders images and labels in train_data
+  then Create folders images and labels in train_data
   then create two folders in images:
   train and val
   add traing and validation images in that folder
@@ -37,8 +37,18 @@ Export Annotations in YOLO format:
 Text files of Labela will be downloaded
 
 6.save that text files in labels folder in different folder train and val
+7.Upload train_data folder in foloowing notebook
+https://github.com/ultralytics/yolov5
+8. Create new.yaml file
+  dit coco128.yaml file acoording to custom dataset
+  nc=2
+  names=['Dent','Hole']
+  /content/yolov5/data/coco128.yaml
+  9.# Train YOLOv5s on COCO128 for 3 epochs
+!python train.py --img 640 --batch 16 --epochs 60 --data new.yaml --weights yolov5s.pt --cache
 
-
+10. Inference
+detect.py runs YOLOv5 inference on a variety of sources, downloading models automatically from the latest YOLOv5 release, and saving results to runs/detect.
 
 
 
